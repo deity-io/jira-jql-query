@@ -14,7 +14,7 @@ Example JQL action:
 ```yaml
 - name: JIRA JQL Query
   id: jira-jql-query
-  uses: deity-io/jira-jql-query@master
+  uses: deity-io/jira-jql-query@main
   with:
     jql: issuekey=bb-1234
     fields: id,key,status
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Login
-      uses: deity-io/gajira-login@master
+      uses: deity-io/gajira-login@main
       env:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
@@ -42,7 +42,7 @@ jobs:
         
     - name: JIRA JQL Query
       id: jira-jql-query
-      uses: deity-io/jira-jql-query@master
+      uses: deity-io/jira-jql-query@main
       with:
         jql: issuekey=bb-1234
         fields: id,key,status
