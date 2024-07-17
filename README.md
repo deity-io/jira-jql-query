@@ -5,7 +5,7 @@ Search JIRA issue by JQL
 
 ## Usage
 
-> ##### Note: this action requires [Jira Login Action](https://github.com/marketplace/actions/jira-login)
+> ##### Note: this action requires [Jira Login Action](https://github.com/deity-io/gajira-login)
 
 ![JQL Query](../assets/example.gif?raw=true)
 
@@ -14,7 +14,7 @@ Example JQL action:
 ```yaml
 - name: JIRA JQL Query
   id: jira-jql-query
-  uses: shamrat17/jira-jql-query@master
+  uses: deity-io/jira-jql-query@master
   with:
     jql: issuekey=bb-1234
     fields: id,key,status
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Login
-      uses: atlassian/gajira-login@master
+      uses: deity-io/gajira-login@master
       env:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
@@ -42,7 +42,7 @@ jobs:
         
     - name: JIRA JQL Query
       id: jira-jql-query
-      uses: shamrat17/jira-jql-query@master
+      uses: deity-io/jira-jql-query@master
       with:
         jql: issuekey=bb-1234
         fields: id,key,status
